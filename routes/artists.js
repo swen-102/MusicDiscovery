@@ -3,7 +3,7 @@ var router = express.Router();
 var mongojs = require('mongojs');
 var db = mongojs('mongodb://mdteam:Discovery123@ds155684.mlab.com:55684/music-discovery');
 
-// Get All Tasks
+// Get All Artists
 router.get('/artists', function(req, res, next){
     db.artists.find(function(err, artists){
         if(err){
@@ -13,7 +13,7 @@ router.get('/artists', function(req, res, next){
     });
 });
 
-// Get Single Task
+// Get Single Artist
 router.get('/artist/:id', function(req, res, next){
     db.artists.findOne({_id: mongojs.ObjectId(req.params.id)}, function(err, artist){
         if(err){
@@ -23,7 +23,7 @@ router.get('/artist/:id', function(req, res, next){
     });
 });
 
-//Save Task
+//Save Artist
 router.post('/artist', function(req, res, next){
     var artist = req.body;
     if(!artist.name){
@@ -41,7 +41,7 @@ router.post('/artist', function(req, res, next){
     }
 });
 
-// Delete Task
+// Delete Artist
 router.delete('/artist/:id', function(req, res, next){
     db.artists.remove({_id: mongojs.ObjectId(req.params.id)}, function(err, artist){
         if(err){
@@ -51,7 +51,7 @@ router.delete('/artist/:id', function(req, res, next){
     });
 });
 
-// Update Task
+// Update Artist
 router.put('/artist/:id', function(req, res, next){
     var artist = req.body;
     var updArtist = {};
