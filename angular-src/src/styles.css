@@ -1,1 +1,370 @@
 /* You can add global styles to this file, and also import other style files */
+/* Reset all default css*/
+*{
+  color: #929292;
+
+  font-family: "helvetica neue";
+}
+
+body{
+
+  background-color: #ecf0f1;
+  height: 100%;
+  animation-name: fade-in;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+/* Header */
+.header{
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(0,0,0,.04);
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr 2fr;
+  grid-column-align: center;
+}
+.logoContainer{
+  justify-self: stretch;
+}
+.logo{
+    margin: 10px 0 0 15px;
+}
+.fa-music{
+  color: #444444;
+  margin-left: -8px;
+}
+.fa-bars{
+  visibility: hidden;
+  position: absolute;
+  cursor: pointer;
+}
+  /* navBarContainer */
+  .navBarContainer{
+    justify-self: end;
+  }
+  .navbar{
+    display: inline;
+  }
+
+  .navbar li{
+    display: inline-block;
+    padding-bottom: 5px;
+    margin: 15px 20px;
+  }
+  .link{
+    text-decoration: none;
+    transition: all 300ms;
+  }
+  .link:hover{
+    transform: scale(1.2);
+  }
+  .active{
+    border-bottom: 2px solid #929292;
+  }
+
+  /**/
+
+  /* searchContainer */
+  .searchContainer{
+    background-color: white;
+    grid-column: 4;
+    justify-self: end;
+    height: 44px;
+  }
+  .searchInput{
+    box-shadow: inset 1px -1px 15px #cccccc;
+    border-top-left-radius: 2.5px;
+    border-bottom-left-radius: 2.5px;
+    z-index: 2;
+    background-color: white;
+    height: 48px;
+    position: absolute;
+    right: 0;
+    font-size: 18px;
+    padding-left: 10px;
+    color: black;
+    transition: all 300ms;
+    width: 300px;
+    border: 0;
+    border-left: 3px solid #929292;
+
+  }
+  .searchInput::placeholder{
+    color: #929292;
+  }
+  .searchInput:focus{
+    outline: none;
+  }
+
+  .searchButton:focus{
+    outline: none;
+  }
+  .fa-search{
+    z-index: 5;
+    margin: 15px 15px 0 0;
+    visibility: hidden;
+
+  }
+  .wider{
+    width: 350px;
+  }
+  /**/
+/**/
+
+/* favArtists */
+.section{
+  display: grid;
+  margin-top: 60px;
+}
+.sectionHeader{
+  text-align: center;
+  z-index: 0;
+  color: #929292;
+}
+.green{
+  color: #444444;
+}
+  /* artistListContainer */
+  .itemListContainer{
+    width: 100%;
+    height: 200px;
+    margin-bottom: 50px;
+    /*margin: 0 10vw;*/
+  }
+  .itemList{
+    padding: 0;
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    list-style: none;
+    grid-row-gap: 70px;
+    height: 100%;
+  }
+  .itemContainer{
+
+    justify-self: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px #999999;
+
+    transition: all 300ms;
+
+  }
+  .expandItem{
+    height: 165px;
+    margin-bottom: -15px;
+  }
+
+  .itemPhoto{
+
+    transition: all 300ms;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+  }
+  .itemName{
+    text-align: center;
+    color: #929292;
+  }
+  .artistLink{
+    text-decoration: none;
+  }
+  /**/
+/**/
+
+/* Fav Albums*/
+  .lighter{
+    background-color: rgba(0,0,0,.04);
+    padding-bottom: 50px;
+    border-radius: 10px;
+  }
+  .albumList{
+    grid-template-columns: 1fr 1fr;
+  }
+  .album{
+    width: 300px;
+    height: 300px;
+    background-color: transparent;
+    border: 0;
+    transition: none;
+  }
+  .album:hover{
+    height: 300px;
+    margin-bottom: 0;
+  }
+  .albumImage{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+  }
+  .fa-sort-desc{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  /* Fav Albums List Container*/
+
+
+
+  /**/
+/**/
+
+/* Animations */
+  @keyframes fade-in{
+    0%{
+      opacity: 0
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    0%{
+      transform: translateY(100px);
+    }
+    100%{
+      transform: translateY(0);
+    }
+  }
+
+
+
+
+/**/
+
+@media screen and (min-width: 1000px){
+  .albumList{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 891px){
+  .header{
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+  }
+  .hidden{
+    transition: all 300ms;
+    display: none;
+  }
+  .searchInput{
+    display: none;
+  }
+  .shown{
+    animation-name: slide-up;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    z-index: -1;
+    position: absolute;
+    left: 35vw;
+    display: block;
+    width: 64vw;
+
+  }
+  .searchButton{
+    display: none;
+  }
+  .searchContainer{
+      background-color: transparent;
+    margin-right: 0;
+  }
+
+  .itemList{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .albumList{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fa-search{
+    z-index: 5;
+    visibility: visible;
+    cursor: pointer;
+    transition: all 300ms;
+    margin: 15px 15px 0 0;
+  }
+  .fa-search:hover{
+    transform: scale(1.3);
+  }
+}
+
+@media screen and (max-width: 693px){
+  .header{
+    display: grid;
+    grid-template-columns: 275px 1fr 1fr;
+    overflow: visible;
+  }
+  .link{
+    display: none;
+  }
+  .fa-bars{
+    visibility: visible;
+    margin: 15px 0 0 15px;
+  }
+  .logo{
+    margin: 10px 0 0 45px;
+  }
+  .itemList{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .albumList{
+    grid-template-columns: 1fr;
+  }
+  .itemContainer{
+    margin: 0;
+  }
+  .shown{
+    z-index: 2;
+    animation-name: fade-in;
+    animation-fill-mode: forwards;
+    animation-duration: 300ms;
+    left: 0;
+    top: 50px;
+    width: 97.5vw;
+    transition: none;
+    margin-bottom: 100px;
+  }
+  .shown-side{
+    display: inline;
+    color: #929292;
+    z-index: 3;
+  }
+
+  .full-width-nav{
+    animation-name: fade-in;
+    animation-fill-mode: forwards;
+    animation-duration: 300ms;
+    position: absolute;
+    left: 0;
+    height: 50px;
+    top: 50px;
+    width: 100vw;
+    background-color: white;
+    z-index: 2;
+    box-shadow: inset 1px -1px 15px #cccccc;
+  }
+  .wider{
+    width: 98.5vw;
+  }
+  .category{
+    width: 70px;
+    height: 70px;
+    float: bottom;
+  }
+}
+
+@media screen and (max-width: 560px){
+  .itemList{
+    grid-template-columns: 1fr 1fr;
+  }
+  .albumList{
+    grid-template-columns: 1fr;
+  }
+}
