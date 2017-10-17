@@ -32,9 +32,15 @@
   <!-- Container with navbar elements -->
   <div class="navbarContainer">
     <ul class="navbar">
-      <li class="active"><a class="link" href="index.html">Home</a></li>
-      <li><a class="link" href="profile.html">Profile</a></li>
-      <li><a class="link" href="#">Logout</a></li>
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" [routerLink]="['/']">Home</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" [routerLink]="['/login']">Login</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" [routerLink]="['/register']">Register</a>
+        </li>
     </ul>
   </div>
 

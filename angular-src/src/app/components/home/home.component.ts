@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArtistsComponent } from '../artists/artists.component';
 
 @Component({
   selector: 'app-home',

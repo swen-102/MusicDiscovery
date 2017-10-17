@@ -4,7 +4,7 @@ import { Artist } from '../../Artist';
 
 @Component({
   moduleId: module.id,
-  selector: 'artists',
+  selector: 'app-artists',
   templateUrl: 'artists.component.html'
 })
 
