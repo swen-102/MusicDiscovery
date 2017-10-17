@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 import { ArtistService } from './services/artist.service';
+import { ValidateService } from './services/validate.service';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
@@ -34,10 +35,11 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ArtistService],
+  providers: [ArtistService, ValidateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
