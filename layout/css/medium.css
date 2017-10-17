@@ -1,0 +1,49 @@
+@media screen and (max-width: 891px){
+  .header{
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+  }
+  .hidden{
+    transition: all 300ms;
+    display: none;
+  }
+  .searchInput{
+    display: none;
+  }
+  .shown{
+    animation-name: slide-up;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    z-index: -1;
+    position: absolute;
+    left: 35vw;
+    display: block;
+    width: 64vw;
+
+  }
+  .searchButton{
+    display: none;
+  }
+  .searchContainer{
+      background-color: transparent;
+    margin-right: 0;
+  }
+
+  .itemList{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .albumList{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fa-search{
+    z-index: 5;
+    visibility: visible;
+    cursor: pointer;
+    transition: all 300ms;
+    margin: 15px 15px 0 0;
+  }
+  .fa-search:hover{
+    transform: scale(1.3);
+  }
+}
