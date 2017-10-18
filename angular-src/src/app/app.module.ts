@@ -14,6 +14,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 
 import { ArtistService } from './services/artist.service';
 import { ValidateService } from './services/validate.service';
+import { AuthService } from './services/auth.service';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
@@ -39,7 +40,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ArtistService, ValidateService],
+  providers: [ArtistService, AuthService, ValidateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
