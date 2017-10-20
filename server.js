@@ -1,23 +1,23 @@
-var express = require('express');
-var path = require('path');
-var bodyParser = require('body-parser');
-var cors = require('cors');
-var passport = require('passport');
-var mongoose = require('mongoose');
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const passport = require('passport');
+const mongoose = require('mongoose');
 const config = require('./config/database');
 
-var app = express();
+const app = express();
 
-var port = 3000;
+const port = 3000;
 
-var index = require('./routes/index');
-var artists = require('./routes/artists');
-var users = require('./routes/users');
+const index = require('./routes/index');
+const artists = require('./routes/artists');
+const users = require('./routes/users');
 
 // Connect to database
 mongoose.connect(config.database, {useMongoClient: true});
 mongoose.connection.on('connected', () => {
-    console.log('Connected to database '+config.database);
+    console.log('Connected to database!');
 });
 mongoose.connection.on('error', (err) => {
     console.log('Database error: '+err);
@@ -32,14 +32,6 @@ app.engine('html', require('ejs').renderFile);
 // Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.get('/', (req, res) => {
-//     res.send('Invalid Endpoint');
-// });
-
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public/index.html'));
-// });
-
 // Body Parser MW
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -51,12 +43,12 @@ app.use(passport.session());
 require('./config/passport')(passport);
 
 // Bypass Access-Control-Allow-Origin issue
-app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
-    res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-});
+// app.use(function(req, res, next) {
+//     res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+//     res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
+//     res.header('Access-Control-Allow-Headers', 'Content-Type');
+//     next();
+// });
 
 // Routes
 app.use('/', index);
