@@ -24,7 +24,6 @@ body{
   background-color: rgba(0,0,0,.04);
   display: grid;
   grid-template-columns: 2fr 3fr 1fr 2fr;
-  grid-column-align: center;
 }
 .logoContainer{
   justify-self: stretch;
@@ -144,7 +143,7 @@ body{
     height: 100%;
   }
   .itemContainer{
-
+    background-color: rgba(68, 106, 163, 0.212);
     justify-self: center;
     width: 150px;
     height: 150px;
@@ -152,7 +151,7 @@ body{
     box-shadow: 3px 3px 10px #999999;
 
     transition: all 100ms;
-
+    
   }
   .expandItem{
     height: 165px;
@@ -160,11 +159,14 @@ body{
   }
 
   .itemPhoto{
-
+  
     transition: all 300ms;
     width: 150px;
     height: 150px;
     border-radius: 10px;
+    
+    /* This will have to be 0 when the image is actuallty loaded from the db */
+    margin-bottom: 130px;
   }
   .itemName{
     text-align: center;

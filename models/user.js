@@ -18,7 +18,16 @@ const UserSchema = mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    favArtists: [{
+        //ID's for artists
+    }],
+    favAlbums: [{
+        //ID's for albums
+    }],
+    favSongs: [{
+        //ID's for songs
+    }]
 });
 
 const User = module.exports = mongoose.model('User', UserSchema);
