@@ -1,4 +1,4 @@
-<h1>Artists</h1>
+<!-- <h1>Artists</h1>
 <hr>
 <ul>
   <div *ngFor="let artist of artists">
@@ -6,8 +6,26 @@
     <div *ngFor="let album of artist.albums">
       <ul><b>Album</b>: {{album.title}}</ul>
       <div *ngFor="let song of album.songs">
-        <ul><b>--->Song</b>: {{song.title}}</ul>
+        <ul><b>Song</b>: {{song.lyrics}}</ul>
       </div> 
     </div>
   </div>
-</ul>
+</ul> -->
+
+<!-- Favorite artists container  -->
+<div class="section">
+  
+  <h3 class="sectionHeader">Your Favorite <span class="green">Artists</span></h3>
+
+  <!-- Artist List -->
+    <div class="itemListContainer">
+    <ul class="itemList">
+
+      <li *ngFor="let artist of artists" class="itemContainer artist">
+        <img class="itemPhoto" src="img/JohnMayer.jpg" alt="Photo Goes Here">
+        <h5 class="itemName"><a class="artistLink" href="JohnMayer.html">{{artist.name}} > </a> </h5>
+      </li>
+
+    </ul>
+  </div>
+</div>

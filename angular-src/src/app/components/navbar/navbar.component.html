@@ -32,14 +32,17 @@
   <!-- Container with navbar elements -->
   <div class="navbarContainer">
     <ul class="navbar">
-        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-          <a class="nav-link" [routerLink]="['/']">Home</a>
+        <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a class="link" [routerLink]="['/']">Home</a>
         </li>
-        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-          <a class="nav-link" [routerLink]="['/login']">Login</a>
+        <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a class="link" [routerLink]="['/profile']">Profile</a>
         </li>
-        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-          <a class="nav-link" [routerLink]="['/register']">Register</a>
+        <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a class="link" [routerLink]="['/login']">Login</a>
+        </li>
+        <li *ngIf="authService.loggedIn()">
+          <a class="link" (click)="onLogout()" href="/">Logout</a>
         </li>
     </ul>
   </div>

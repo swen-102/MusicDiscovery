@@ -1,24 +1,23 @@
-<h2 class="page-header">Register</h2>
-<form (submit)="onRegisterSubmit()">
+<h2 class="sectionHeader" style="margin-top: 125px">Register</h2>
+<form class="formContainer" (submit)="onRegisterSubmit()">
   <div class="form-group">
-    <label>Name</label>
-    <input type="text" [(ngModel)]="name" name="name">
+    <input placeholder="Name" class="form-input" type="text" [(ngModel)]="name" name="name">
   </div>
   <div class="form-group">
-    <label>Email</label>
-    <input type="text" [(ngModel)]="email" name="email">
+    
+    <input placeholder="Email" class="form-input" type="text" [(ngModel)]="email" name="email">
   </div>
   <div class="form-group">
-    <label>Username</label>
-    <input type="text" [(ngModel)]="username" name="username">
+    
+    <input placeholder="Username" class="form-input" type="text" [(ngModel)]="username" name="username">
   </div>
   <div class="form-group">
-    <label>Password</label>
-    <input type="password" [(ngModel)]="password" name="password">
+    
+    <input placeholder="Password" class="form-input" type="password" [(ngModel)]="password" name="password">
   </div>
   <div class="form-group">
-    <label>Confirm Password</label>
-    <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword">
+
+    <input placeholder="Confirm Password" class="form-input" type="password" [(ngModel)]="confirmPassword" name="confirmPassword">
   </div>
-  <input type="submit" value="Submit">
+  <input class="registerButton" type="submit" value="Sign Up">
 </form>

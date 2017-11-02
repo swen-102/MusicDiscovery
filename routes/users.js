@@ -41,10 +41,10 @@ router.post('/auth', (req, res, next) => {
                 const token = jwt.sign({data: user}, config.secret, {
                     expiresIn: 604800 // 1 week
                 });
-
+    
                 res.json({
                     success: true,
-                    token: 'JWT '+token,
+                    token: 'JWT '+token, // 'JWT '+token ...need to research why this is needed
                     user: {
                         id: user._id,
                         name: user.name,
@@ -52,6 +52,7 @@ router.post('/auth', (req, res, next) => {
                         email: user.email
                     }
                 });
+
             } else {
                 return res.json({success: false, msg: 'Wrong Password'});
             }

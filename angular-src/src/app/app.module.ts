@@ -16,12 +16,14 @@ import { ArtistService } from './services/artist.service';
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
 
+import { AuthGuard } from './guards/auth.guard';
+
 const appRoutes: Routes = [
-  {path:'', component: HomeComponent},
+  {path:'', component: HomeComponent, canActivate:[AuthGuard]},
   {path:'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'api/artists', component: ArtistsComponent},
-  {path: 'profile', component: ProfileComponent}
+  {path: 'api/artists', component: ArtistsComponent, canActivate:[AuthGuard]},
+  {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]}
 ]
 
 @NgModule({
@@ -40,7 +42,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ArtistService, AuthService, ValidateService],
+  providers: [ArtistService, AuthService, AuthGuard, ValidateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
