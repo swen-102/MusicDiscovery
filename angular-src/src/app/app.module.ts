@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AddArtistComponent } from './components/add-artist/add-artist.component';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
@@ -18,10 +19,13 @@ import { AuthService } from './services/auth.service';
 
 import { AuthGuard } from './guards/auth.guard';
 
+import { FilterPipe } from './pipes/filter.pipe';
+
 const appRoutes: Routes = [
   {path:'', component: HomeComponent, canActivate:[AuthGuard]},
   {path:'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'add-artist', component: AddArtistComponent},
   {path: 'api/artists', component: ArtistsComponent, canActivate:[AuthGuard]},
   {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]}
 ]
@@ -34,7 +38,9 @@ const appRoutes: Routes = [
     RegisterComponent,
     ArtistsComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    AddArtistComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
