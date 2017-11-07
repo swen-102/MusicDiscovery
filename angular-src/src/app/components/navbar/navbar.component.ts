@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArtistService } from '../../services/artist.service';
 import { AuthService } from '../../services/auth.service';
 import { AuthGuard } from '../../guards/auth.guard';
 import { Router } from '@angular/router';
@@ -9,8 +10,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  searchTerm: String;
 
   constructor(
+    private artistService: ArtistService,
     private authService: AuthService,
     private authGuard: AuthGuard,
     private router: Router
@@ -25,5 +28,4 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/login']);
     return false;
   }
-
 }

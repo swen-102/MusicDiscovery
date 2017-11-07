@@ -36,14 +36,15 @@
 <div id="ffaa" class="section">
   
   <h3 class="sectionHeader">Your Favorite <span class="green">Artists</span></h3>
+  <input class="searchInput" [(ngModel)]="searchText" placeholder="search all music..."/>
 
   <!-- Artist List -->
     <div class="itemListContainer">
     <ul class="itemList">
 
-      <li *ngFor="let artist of artists" class="itemContainer artist">
+      <li *ngFor="let artist of artists | filter : searchText" class="itemContainer artist">
         <img class="itemPhoto" src="img/JohnMayer.jpg" alt="Photo Goes Here">
-        <h5 class="itemName"><a class="artistLink" href="JohnMayer.html">{{artist.name}} > </a> </h5>
+        <h5 class="itemName"><a class="artistLink" href="http://localhost:4200/api/artist/{{artist._id}}">{{artist.name}} > </a> </h5>
       </li>
 
     </ul>

@@ -5,12 +5,12 @@ import { Album } from '../../Album';
 import { Song } from '../../Song';
 
 @Component({
-  moduleId: module.id,
-  selector: 'app-artists',
-  templateUrl: 'artists.component.html'
+    moduleId: module.id,
+    selector: 'app-artists',
+    templateUrl: 'artists.component.html'
 })
 
-export class ArtistsComponent { 
+export class ArtistsComponent {
     artists: Artist[];
     title: string;
     albums: Album[] = [];
