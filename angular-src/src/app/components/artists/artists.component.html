@@ -50,12 +50,10 @@
   </div>
 </div>
 
-
+<!-- Album List -->
 <div id="ffal" class="section lighter">
 
   <h3 class="sectionHeader">Your Favorite <span class="green">Albums</span></h3>
-
-  <!-- Album List -->
   <div class="itemListContainer">
       
      
@@ -67,3 +65,19 @@
     </ul>
   </div>
 </div>
+
+<!-- Song List -->
+<div id="ffal" class="section">
+  <h3 class="sectionHeader">Your Favorite <span class="green">Songs</span></h3>
+  <div class="itemListContainer">
+    <ul class="itemList songList">
+
+      <li *ngFor="let song of songs" class="itemContainer song">
+        <img class="songImage" src="img/WincingTheNightAway.jpg" alt="Ed Sheeran Photo">
+        <h5 class="songName">{{ song.name }}</h5>
+        <h5 class="artistName itemName">{{ song.artist }}</h5>
+      </li>
+    </ul>
+  </div>
+</div>
+
