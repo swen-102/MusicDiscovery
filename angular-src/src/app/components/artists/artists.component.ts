@@ -55,13 +55,7 @@ export class ArtistsComponent {
     }
 
 
-    constructor(private artistService:ArtistService){
-        // for (const artist of this.artists){
-        //     for (const album of artist.albums){
-        //         this.albums.push(album);
-        //     }
-        // }
-        
+    constructor(private artistService:ArtistService){  
         this.artistService.getArtists()
             .subscribe(artists => {
                 this.artists = artists;
