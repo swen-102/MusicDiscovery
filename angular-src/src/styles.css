@@ -11,19 +11,20 @@ body{
   animation-name: fade-in;
   animation-duration: 300ms;
   animation-fill-mode: forwards;
-  margin-top: 51px;
 }
 /* Header */
 .header{
+ z-index: 1000;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 50px;
   width: 100%;
-  background-color: rgba(0,0,0,.04);
+  background-color: #E3E7E8;
   display: grid;
   grid-template-columns: 2fr 3fr 1fr 2fr;
+  grid-column-align: center;
 }
 .logoContainer{
   justify-self: stretch;
@@ -51,14 +52,15 @@ body{
   .navbar li{
     display: inline-block;
     padding-bottom: 5px;
-    margin: 15px 20px;
+    margin: 15px;
   }
   .link{
     text-decoration: none;
     transition: all 300ms;
+    
   }
   .link:hover{
-    transform: scale(1.2);
+    margin-bottom: 20px;
   }
   .active{
     border-bottom: 2px solid #929292;
@@ -68,17 +70,15 @@ body{
 
   /* searchContainer */
   .searchContainer{
-    background-color: white;
     grid-column: 4;
     justify-self: end;
     height: 44px;
   }
   .searchInput{
-    box-shadow: inset 1px -1px 15px #cccccc;
     border-top-left-radius: 2.5px;
     border-bottom-left-radius: 2.5px;
     z-index: 2;
-    background-color: white;
+    background-color: transparent;
     height: 48px;
     position: absolute;
     right: 0;
@@ -92,7 +92,7 @@ body{
 
   }
   .searchInput::placeholder{
-    color: #929292;
+    color: #555555;
   }
   .searchInput:focus{
     outline: none;
@@ -102,7 +102,6 @@ body{
     outline: none;
   }
   .fa-search{
-    z-index: 5;
     margin: 15px 15px 0 0;
     visibility: hidden;
 
@@ -112,15 +111,63 @@ body{
   }
   /**/
 /**/
-
-/* favArtists */
 .section{
   display: grid;
   margin-top: 60px;
 }
+
+/* Account */
+.account{
+  /* background-image: url('../img/repeating.png'); */
+  background-attachment: fixed;
+  background-size: 175px 175px;
+  height: 200px;
+  width: 100%;
+  border-bottom: 1px solid #dddddd;
+  grid-template-areas: 
+ "p p p p a a a b b b c c c"
+ "p p p p a a a b b b c c c"
+ "p p p p a a a b b b c c c";
+ align-items: center;
+  
+}
+.circle{
+  position: relative;
+  text-decoration: none;
+  justify-self: center;
+  font-size: 1.5em;
+  display: flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column;
+  text-align: center;
+  color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: rgba(128, 128, 128,.3);
+  transition: all 300ms;
+  cursor: pointer;
+}
+.circle:hover{
+  background-color: rgb(128, 128, 128);
+}
+.c1{
+
+  grid-area: a;
+}
+.c2{
+  grid-area: b;
+}
+.c3{
+  grid-area: c;
+}
+
+
+/* favArtists */
+
 .sectionHeader{
   text-align: center;
-  z-index: 0;
   color: #929292;
 }
 .green{
@@ -129,8 +176,7 @@ body{
   /* artistListContainer */
   .itemListContainer{
     width: 100%;
-    height: 200px;
-    margin-bottom: 50px;
+    
     /*margin: 0 10vw;*/
   }
   .itemList{
@@ -143,7 +189,7 @@ body{
     height: 100%;
   }
   .itemContainer{
-    background-color: rgba(68, 106, 163, 0.212);
+    
     justify-self: center;
     width: 150px;
     height: 150px;
@@ -151,7 +197,7 @@ body{
     box-shadow: 3px 3px 10px #999999;
 
     transition: all 100ms;
-    
+
   }
   .expandItem{
     height: 165px;
@@ -159,16 +205,22 @@ body{
   }
 
   .itemPhoto{
-  
+
     transition: all 300ms;
     width: 150px;
     height: 150px;
     border-radius: 10px;
-    
-    /* This will have to be 0 when the image is actuallty loaded from the db */
-    margin-bottom: 130px;
+  }
+  .itemPhoto:hover{
+    transform: scale(1.02);
+    animation-timing-function: ease-in;
+    box-shadow: 3px 3px 10px #999999;
   }
   .itemName{
+    margin-top: 155px;
+    height: 60px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     text-align: center;
     color: #929292;
   }
@@ -181,6 +233,7 @@ body{
   }
   .artistLink:hover{
     border: 2px solid #929292;
+    box-shadow: 3px 3px 10px #cccccc;
   }
   /**/
 /**/
@@ -189,9 +242,11 @@ body{
   .lighter{
     background-color: rgba(0,0,0,.04);
     padding-bottom: 50px;
+    margin-top: 100px;
     border-radius: 10px;
   }
   .albumList{
+    
     grid-template-columns: 1fr 1fr;
   }
   .album{
@@ -199,12 +254,24 @@ body{
     height: 300px;
     background-color: transparent;
     border: 0;
-    transition: none;
+    transition: all 300ms;
+    position: relative;
   }
   .album:hover{
-    height: 300px;
-    margin-bottom: 0;
+    cursor: pointer;
+    transform: scale(1.03);
   }
+
+  .albumOptions{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    color: white;
+  }
+  .albumName{
+    margin-top: 300px;
+  }
+
   .albumImage{
     width: 300px;
     height: 300px;
@@ -253,54 +320,18 @@ body{
     display: inline-block;
     margin-top: 15px;
   }
-  /* Form stuff */
-  .formContainer{
-    display: inline-block;
-    text-align: center;
-    height: 50vh;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
-  }
-  .form-input{
-    font-size: 18px;
-    padding: 5px;
-    padding-left: 10px;
-    border: 0;
-    width: 40vw;
-    height: 35px;
-    border-radius: 5px;
-    box-shadow: inset 1px 1px 10px #dddddd;
-  }
-  .form-input::placeholder{
-    color: #929292;
-    font-size: 18px;
-  }
-
-  .registerButton {
-    box-shadow: 1px 1px 10px #cccccc;
-    width: 15vw;
-    height: 35px;
-    border-radius: 5px;
-    margin: 0 auto;
-    border: 0;
-    font-size: 20px;
-    background-color: #cccccc;
-    transition: transform 300ms;
-    cursor: pointer;
-} 
-  .registerButton:hover{
-    transform: scale(1.2);
-  }
-
-
-  /*  */
 
 
 
 
 
 /**/
+.footer{
+  height: 200px;
+  /* background-image: url('../img/repeating.png'); */
+  background-attachment: fixed;
+  background-size: 175px 175px;
+}
 
 /* Animations */
   @keyframes fade-in{
@@ -339,7 +370,6 @@ body{
   }
 
 }
-
 @media screen and (max-width: 891px){
   .header{
     display: grid;
@@ -353,14 +383,14 @@ body{
     display: none;
   }
   .shown{
+    z-index: 1;
     animation-name: slide-up;
     animation-duration: 300ms;
     animation-fill-mode: forwards;
-    z-index: -1;
     position: absolute;
     left: 35vw;
     display: block;
-    width: 64vw;
+    width: 55vw;
 
   }
   .searchButton{
@@ -462,13 +492,9 @@ body{
     height: 70px;
     float: bottom;
   }
-  .form-input{
-    width: 70vw;
+  .searchInput{
+    background-color: white;
   }
-  .registerButton{
-    width: 30vw;
-  }
-
 }
 
 @media screen and (max-width: 560px){

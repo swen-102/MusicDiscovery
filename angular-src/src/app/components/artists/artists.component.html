@@ -12,8 +12,28 @@
   </div>
 </ul> -->
 
-<!-- Favorite artists container  -->
-<div class="section">
+
+<!-- Profile Dashboard -->
+<div class="section account">
+  <div class="c1">
+      <a href="#ffaa" class="circle">5</a>
+      <h4>Favorite Artists</h4>
+  </div>
+  <div class="c2">
+      <a href="#ffal" class="circle">4</a>
+      <h4>Favorite Albums</h4>
+  </div>
+  <div class="c3">
+      <a href="#ffs" class="circle">6</a>
+      <h4>Favorite Songs</h4>
+  </div>
+  
+</div>
+
+
+
+
+<div id="ffaa" class="section">
   
   <h3 class="sectionHeader">Your Favorite <span class="green">Artists</span></h3>
 
@@ -26,6 +46,24 @@
         <h5 class="itemName"><a class="artistLink" href="JohnMayer.html">{{artist.name}} > </a> </h5>
       </li>
 
+    </ul>
+  </div>
+</div>
+
+
+<div id="ffal" class="section lighter">
+
+  <h3 class="sectionHeader">Your Favorite <span class="green">Albums</span></h3>
+
+  <!-- Album List -->
+  <div class="itemListContainer">
+      
+     
+    <ul class="itemList albumList">
+      <li *ngFor="let album of albums" class="itemContainer album">
+        <img class="albumImage" src="img/JohnMayer.jpg" alt="Photo Goes Here">
+        <h5 class="itemName albumName">{{album.title}}</h5>
+      </li>
     </ul>
   </div>
 </div>
