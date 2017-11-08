@@ -4,6 +4,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ArtistService{
+    name: string;
+
     constructor(private http: Http){
         console.log('Artist Service Initialized...');
     }

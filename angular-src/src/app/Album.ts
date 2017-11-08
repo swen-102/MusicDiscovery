@@ -1,4 +1,5 @@
-import { Song } from './Song';
+import { Song } from './song';
+import { Artist } from './Artist';
 
 export class Album{
     type: string;
@@ -6,4 +7,5 @@ export class Album{
     ratings: string;
     title: string;
     songs: Song[]
+    artist: Artist;
 }

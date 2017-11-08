@@ -13,7 +13,7 @@ router.get('/artists', function(req, res, next){
     });
 });
 
-// Get Single Artist
+// Get Single Artist from Search
 router.get('/artist/:id', function(req, res, next){
     db.artists.findOne({_id: mongojs.ObjectId(req.params.id)}, function(err, artist){
         if(err){
