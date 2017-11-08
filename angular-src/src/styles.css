@@ -5,6 +5,45 @@
   font-family: "helvetica neue";
 }
 
+/* Form stuff */
+.formContainer{
+  display: inline-block;
+  text-align: center;
+  height: 50vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+.form-input{
+  font-size: 18px;
+  padding: 5px;
+  padding-left: 10px;
+  border: 0;
+  width: 40vw;
+  height: 35px;
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 10px #dddddd;
+}
+.form-input::placeholder{
+  color: #929292;
+  font-size: 18px;
+}
+.registerButton {
+  box-shadow: 1px 1px 10px #cccccc;
+  width: 15vw;
+  height: 35px;
+  border-radius: 5px;
+  margin: 0 auto;
+  border: 0;
+  font-size: 20px;
+  background-color: #cccccc;
+  transition: transform 300ms;
+  cursor: pointer;
+} 
+.registerButton:hover{
+  transform: scale(1.2);
+}
+
 body{
   background-color: #ecf0f1;
   height: 100%;
