@@ -51,11 +51,7 @@
      
     <ul class="itemList albumList">
       <li *ngFor="let album of albums" class="itemContainer album">
-<<<<<<< HEAD
-        <img class="albumImage" src="../../assets/Albums/{{artist._id}}-{{album._id}}.jpg" alt="Photo Goes Here">
-=======
-        <img class="albumImage" src="../../assets/something.jpg" alt="Photo Goes Here">
->>>>>>> 9f805c1926297ba400bfab98772373c67a368aa0
+        <img class="albumImage" src="../../assets/Albums/{{artist._id}}-{{album._id}}.jpg">
         <h5 class="itemName albumName">{{album.title}}</h5>
       </li>
     </ul>
@@ -69,7 +65,7 @@
     <ul class="itemList songList">
 
       <li *ngFor="let song of songs" class="itemContainer song">
-        <img class="songImage" src="img/WincingTheNightAway.jpg" alt="Ed Sheeran Photo">
+        <img class="songImage" src="../../assets/Albums/{{song.artist._id}}-{{song.album._id}}.jpg">
         <h5 class="songName">{{ song.name }}</h5>
         <h5 class="artistName itemName">{{ song.artist }}</h5>
       </li>
