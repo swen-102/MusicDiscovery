@@ -24,7 +24,7 @@ router.get('/artist/:id', function(req, res, next){
 });
 
 //Save Artist
-router.post('/artist', function(req, res, next){
+router.post('/new-artist', function(req, res, next){
     var artist = req.body;
     if(!artist.name){
         res.status(400);

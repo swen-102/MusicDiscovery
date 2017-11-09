@@ -42,9 +42,6 @@ export class ArtistsComponent {
                 for (const song of album.songs){
                     temp_songs[i] = new Song();
                     temp_songs[i].title = song.title;
-                    temp_songs[i].lyrics = song.lyrics;
-                    temp_songs[i].length = song.length;
-                    temp_songs[i].link = song.link;
                     temp_songs[i].artist = song.artist;
                     temp_songs[i].album = song.album;
                     
