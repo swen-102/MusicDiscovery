@@ -1,17 +1,8 @@
-<!-- <h1>Artists</h1>
-<hr>
-<ul>
-  <div *ngFor="let artist of artists">
-    <li><b>Artist</b>: {{artist.name}}</li>
-    <div *ngFor="let album of artist.albums">
-      <ul><b>Album</b>: {{album.title}}</ul>
-      <div *ngFor="let song of album.songs">
-        <ul><b>Song</b>: {{song.lyrics}}</ul>
-      </div> 
-    </div>
-  </div>
-</ul> -->
-
+<!-- Container with searchbar contents -->
+<div class="searchContainer">
+  <input class="searchInput" [(ngModel)]="searchText" placeholder="search all music..."/>
+  <i class=" fa fa-search"></i>
+</div>
 
 <!-- Profile Dashboard -->
 <div class="section account">
@@ -36,7 +27,7 @@
 <div id="ffaa" class="section">
   
   <h3 class="sectionHeader">Your Favorite <span class="green">Artists</span></h3>
-  <input class="searchInput" [(ngModel)]="searchText" placeholder="search all music..."/>
+  
 
   <!-- Artist List -->
     <div class="itemListContainer">
@@ -68,7 +59,7 @@
 </div>
 
 <!-- Song List -->
-<div id="ffal" class="section">
+<div id="ffs" class="section">
   <h3 class="sectionHeader">Your Favorite <span class="green">Songs</span></h3>
   <div class="itemListContainer">
     <ul class="itemList songList">
@@ -81,4 +72,12 @@
     </ul>
   </div>
 </div>
+
+<!-- Footer -->
+
+<div class="section footer">
+  
+      </div>
+  
+
 
