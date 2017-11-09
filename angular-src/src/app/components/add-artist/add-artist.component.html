@@ -1,10 +1,14 @@
+
 <h2 class="sectionHeader" style="margin-top: 125px">Add an Artist</h2>
 <form class="formContainer" (submit)="onArtistAdd()">
   <div class="form-group">
     <input placeholder="Artist Name" class="form-input" type="text" [(ngModel)]="name" name="name">
   </div>
   <div class="form-group">
-    <input placeholder="Password" class="form-input" type="password" [(ngModel)]="password" name="password">
+    <textarea rows="4" cols="50" [(ngModel)]="bio" name="bio" placeholder="Artist Bio" class="textarea-input"></textarea>
   </div>
+  <div class="form-group">
+    <input placeholder="Artist Genre" class="form-input" type="text" [(ngModel)]="genre" name="genre">
+  </div> 
   <input class="registerButton" type="submit" value="Add Artist">
 </form>

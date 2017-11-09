@@ -24,6 +24,16 @@
   border-radius: 5px;
   box-shadow: inset 1px 1px 10px #dddddd;
 }
+.textarea-input{
+  font-size: 18px;
+  padding: 5px;
+  padding-left: 10px;
+  border: 0;
+  width: 40vw;
+  height: 125px;
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 10px #dddddd;
+}
 .form-input::placeholder{
   color: #929292;
   font-size: 18px;
@@ -64,6 +74,7 @@ body{
   display: grid;
   grid-template-columns: 2fr 3fr 1fr 2fr;
   grid-column-align: center;
+  border-bottom: 1px solid #dddddd;
 }
 .logoContainer{
   justify-self: stretch;
@@ -112,14 +123,15 @@ body{
     grid-column: 4;
     justify-self: end;
     height: 44px;
+    margin-top: -8px;
   }
   .searchInput{
     border-top-left-radius: 2.5px;
     border-bottom-left-radius: 2.5px;
-    z-index: 2;
+    z-index: 2000;
     background-color: transparent;
     height: 48px;
-    position: absolute;
+    position: fixed;
     right: 0;
     font-size: 18px;
     padding-left: 10px;
@@ -157,7 +169,7 @@ body{
 
 /* Account */
 .account{
-  /* background-image: url('../img/repeating.png'); */
+  background-image: url('assets/repeating.png');
   background-attachment: fixed;
   background-size: 175px 175px;
   height: 200px;
@@ -250,12 +262,7 @@ body{
     height: 150px;
     border-radius: 10px;
   }
-  .itemPhoto:hover{
-  
-    transform: scale(1.02);
-    animation-timing-function: ease-in;
-    box-shadow: 3px 3px 10px #999999;
-  }
+
   .itemName{
     height: 60px;
     white-space: nowrap;
@@ -279,6 +286,7 @@ body{
 
 /* Fav Albums*/
   .lighter{
+    padding-top: 60px;
     background-color: rgba(0,0,0,.04);
     padding-bottom: 50px;
     margin-top: 100px;
@@ -367,7 +375,7 @@ body{
 /**/
 .footer{
   height: 200px;
-  /* background-image: url('../img/repeating.png'); */
+  background-image: url('assets/repeating.png');
   background-attachment: fixed;
   background-size: 175px 175px;
 }

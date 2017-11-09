@@ -1,26 +1,3 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">Music Discovery</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-          <a class="nav-link" [routerLink]="['/']">Home</a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-            <a class="nav-link" [routerLink]="['/api/artists']">Artists</a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-            <a class="nav-link" [routerLink]="['/login']">Login</a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-            <a class="nav-link" [routerLink]="['/register']">Register</a>
-        </li>
-      </ul>
-    </div>
-  </nav> -->
 
 <!-- Header containing logo, nav, and search  -->
 <div class="header">
@@ -38,21 +15,17 @@
         <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
           <a class="link" [routerLink]="['/profile']">Profile</a>
         </li>
-        <li *ngIf="authService.loggedIn()">
+        <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
           <a class="link" [routerLink]="['/add-artist']">Add Artist</a>
         </li>
         <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
           <a class="link" [routerLink]="['/login']">Login</a>
         </li>
         <li *ngIf="authService.loggedIn()">
-          <a class="link" (click)="onLogout()" href="/">Logout</a>
+          <a class="link"  (click)="onLogout()" href="/">Logout</a>
         </li>
     </ul>
   </div>
-
-  <!-- Container with searchbar contents -->
-  <div class="searchContainer">
-    <input class="searchInput" [(ngModel)]="searchText" placeholder="search all music..."/>
-    <i class=" fa fa-search"></i>
-  </div>
+ 
+  
 </div>
