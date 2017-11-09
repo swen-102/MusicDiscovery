@@ -24,6 +24,16 @@
   border-radius: 5px;
   box-shadow: inset 1px 1px 10px #dddddd;
 }
+.textarea-input{
+  font-size: 18px;
+  padding: 5px;
+  padding-left: 10px;
+  border: 0;
+  width: 40vw;
+  height: 125px;
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 10px #dddddd;
+}
 .form-input::placeholder{
   color: #929292;
   font-size: 18px;
