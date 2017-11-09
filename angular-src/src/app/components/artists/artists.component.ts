@@ -27,7 +27,9 @@ export class ArtistsComponent {
                 temp_albums[i].ratings = album.ratings;
                 temp_albums[i].title = album.title;
                 temp_albums[i].songs = album.songs;
-                temp_albums[i].artist = album.artist;
+                temp_albums[i].artist = artist;
+                temp_albums[i]._id = album._id;
+                console.log(artist);
                 i++;
             }
         } 
@@ -42,8 +44,8 @@ export class ArtistsComponent {
                 for (const song of album.songs){
                     temp_songs[i] = new Song();
                     temp_songs[i].title = song.title;
-                    temp_songs[i].artist = song.artist;
-                    temp_songs[i].album = song.album;
+                    temp_songs[i].artist = artist;
+                    temp_songs[i].album = album;
                     
                 }
             }

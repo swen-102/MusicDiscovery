@@ -70,6 +70,7 @@ body{
   left: 0;
   height: 50px;
   width: 100%;
+
   background-color: #E3E7E8;
   display: grid;
   grid-template-columns: 2fr 3fr 1fr 2fr;
@@ -316,7 +317,7 @@ body{
     color: white;
   }
   .albumName{
-    margin-top: 300px;
+    margin-top: 15px;
   }
 
   .albumImage{
