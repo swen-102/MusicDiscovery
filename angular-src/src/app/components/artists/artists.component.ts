@@ -21,6 +21,7 @@ export class ArtistsComponent {
         let temp_albums = [];
         for (const artist of artists){
             for (const album of artist.albums){
+                let _id = 1;
                 temp_albums[i] = new Album();
                 temp_albums[i].type = album.type;
                 temp_albums[i].summary = album.summary;
@@ -28,11 +29,12 @@ export class ArtistsComponent {
                 temp_albums[i].title = album.title;
                 temp_albums[i].songs = album.songs;
                 temp_albums[i].artist = artist;
-                temp_albums[i]._id = album._id;
-                console.log(artist);
+                temp_albums[i]._id = _id.toString();
+                _id++;
                 i++;
             }
         } 
+        console.log(temp_albums);
         return temp_albums; 
     }
 
