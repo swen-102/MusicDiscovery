@@ -7,10 +7,10 @@ export class AddArtistService {
 
   constructor(private http: Http) { }
 
-  registerUser(newArtist){
+  addArtist(newArtist){
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/artists/new-artist', newArtist, {headers: headers})
+    return this.http.post('/api/new-artist', newArtist, {headers: headers})
       .map(res => res.json());
   }
 
