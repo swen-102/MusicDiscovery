@@ -3,6 +3,7 @@ import { ArtistService } from '../../services/artist.service';
 import { Artist } from '../../Artist';
 import { Album } from '../../Album';
 import { Song } from '../../Song';
+import { Router } from '@angular/router';
 
 @Component({
     moduleId: module.id,
@@ -56,7 +57,7 @@ export class ArtistsComponent {
     }
 
 
-    constructor(private artistService:ArtistService){  
+    constructor(private artistService:ArtistService, private _router:Router){  
         this.artistService.getArtists()
             .subscribe(artists => {
                 this.artists = artists;
