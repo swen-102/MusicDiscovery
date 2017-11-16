@@ -20,8 +20,8 @@ export class ArtistsComponent {
         let i=0;
         let temp_albums = [];
         for (const artist of artists){
+            let _id = 1;
             for (const album of artist.albums){
-                let _id = 1;
                 temp_albums[i] = new Album();
                 temp_albums[i].type = album.type;
                 temp_albums[i].summary = album.summary;
