@@ -46,12 +46,10 @@
 <div id="ffal" class="section lighter">
 
   <h3 class="sectionHeader">Your Favorite <span class="green">Albums</span></h3>
-  <div class="itemListContainer" *ngFor="let artist of artists">
-      
-     
+  <div class="itemListContainer"> 
     <ul class="itemList albumList">
       <li *ngFor="let album of albums" class="itemContainer album">
-        <img  class="albumImage" src="../../assets/Albums/{{artist._id}}-{{album._id}}.jpg">
+        <img  class="albumImage" src="../../assets/Albums/{{album.artist._id}}-{{album._id}}.jpg">
         <h5 class="itemName albumName">{{album.title}}</h5>
       </li>
     </ul>
