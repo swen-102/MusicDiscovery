@@ -1,8 +1,9 @@
 
 <div *ngIf="user">
-  <h2>{{user.name}}</h2>
-  <ul>
-    <li>Username: {{user.username}}</li>
-    <li>Email: {{user.email}}</li>
+  <h2 class="header_profile">Your Profile <i class="fa fa-user"></i></h2>
+  <ul class="list_info">
+      <li class="info_item">Name <span class="right_side">{{user.name}}</span></li>
+    <li class="info_item">Username <span class="right_side">{{user.username}}</span></li>
+    <li class="info_item last">Email <span class="right_side">{{user.email}}</span></li>
   </ul>
 </div>
