@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AddArtistService } from '../../services/add-artist.service';
 import { Router } from '@angular/router';
+import { Album } from '../../Album';
 
 @Component({
   selector: 'app-add-artist',
@@ -12,6 +13,7 @@ export class AddArtistComponent implements OnInit {
   name: String;
   bio: String;
   genre: String;
+  albums: Album[];
 
   constructor(
     private addArtistService: AddArtistService,
@@ -25,7 +27,8 @@ export class AddArtistComponent implements OnInit {
     const newArtist = {
       name: this.name,
       bio: this.bio,
-      genre: this.genre
+      genre: this.genre,
+      albums: this.albums
     }
     this.addArtistService.addArtist(newArtist).subscribe(data => {
       if(data.success){

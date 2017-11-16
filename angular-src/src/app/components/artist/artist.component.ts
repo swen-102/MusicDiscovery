@@ -3,6 +3,7 @@ import { ArtistService } from '../../services/artist.service';
 import { Artist } from '../../Artist';
 import { Album } from '../../Album';
 import { Song } from '../../Song';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-artist',
@@ -15,6 +16,18 @@ export class ArtistComponent {
     title: string;
     albums: Album[] = [];
     songs: Song[] = [];
+
+    constructor(
+        private artistService:ArtistService,
+        private router: Router
+    ){  
+        this.artistService.getArtist()
+            .subscribe(artist => {
+                this.artist = artist;
+                this.albums = this.getAlbums(artist);
+                this.songs = this.getSongs(artist);
+            });
+    }
 
     getAlbums(artist){
         let i=0;
@@ -49,16 +62,6 @@ export class ArtistComponent {
             }
         } 
         return temp_songs; 
-    }
-
-
-    constructor(private artistService:ArtistService){  
-        this.artistService.getArtist()
-            .subscribe(artist => {
-                this.artist = artist;
-                this.albums = this.getAlbums(artist);
-                this.songs = this.getSongs(artist);
-            });
     }
 
     onClick(){

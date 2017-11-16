@@ -26,28 +26,12 @@ router.get('/artist/:id', function(req, res, next){
 });
 
 //Save Artist
-// router.post('/new-artist', function(req, res, next){
-//     var artist = req.body;
-//     if(!artist.name){
-//         res.status(400);
-//         res.json({
-//             "error": "Bad Data"
-//         });
-//     } else {
-//         db.artists.save(artist, function(err, artist){
-//             if(err){
-//                 res.send(err);
-//             }
-//             res.json(artist);
-//         });
-//     }
-// });
-
 router.post('/new-artist', (req, res, next) => {
     let newArtist = new Artist({
         name: req.body.name,
         bio: req.body.bio,
-        genre: req.body.genre
+        genre: req.body.genre,
+        albums: req.body.albums
     });
 
     Artist.addArtist(newArtist, (err, artist) => {

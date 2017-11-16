@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// const bcrypt = require('bcrypt');
 const config = require('../config/database');
 
 // Artist Schema
@@ -14,6 +13,10 @@ const ArtistSchema = mongoose.Schema({
     genre: {
         type: String,
         required: true
+    },
+    albums: {
+        type: Object,
+        required: false
     }
 });
 
