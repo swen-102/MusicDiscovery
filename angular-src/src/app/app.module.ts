@@ -21,6 +21,7 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 
 import { FilterPipe } from './pipes/filter.pipe';
+import { ArtistComponent } from './components/artist/artist.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent, canActivate:[AuthGuard]},
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
     HomeComponent,
     ProfileComponent,
     AddArtistComponent,
-    FilterPipe
+    FilterPipe,
+    ArtistComponent
   ],
   imports: [
     BrowserModule,
