@@ -50,6 +50,7 @@ export class ArtistsComponent {
                     temp_songs[i].title = song.title;
                     temp_songs[i].artist = album.artist;
                     temp_songs[i].album = album; 
+                    i++;
                 }
             }
         return temp_songs; 
@@ -62,6 +63,7 @@ export class ArtistsComponent {
                 this.artists = artists;
                 this.albums = this.getAlbums(artists);
                 this.songs = this.getSongs(this.albums);
+                console.log(this.songs);
             });
     }
 }

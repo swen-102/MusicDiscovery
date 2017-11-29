@@ -64,7 +64,7 @@
 
       <li *ngFor="let song of songs" class="itemContainer song">
         <img class="songImage" src="../../assets/Albums/{{song.artist._id}}-{{song.album._id}}.jpg">
-        <h5 class="songName">{{ song.name }}</h5>
+        <h5 class="songName">{{ song.title }}</h5>
         <h5 class="artistName itemName">{{ song.artist.name }}</h5>
       </li>
     </ul>
