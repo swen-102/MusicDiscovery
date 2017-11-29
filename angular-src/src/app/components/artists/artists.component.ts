@@ -39,20 +39,19 @@ export class ArtistsComponent {
         return temp_albums; 
     }
 
-    getSongs(artists){
+    getSongs(albums){
         let i=0;
         let temp_songs = [];
-        for (const artist of artists){
-            for(const album of artist.albums){
+       
+            for(const album of albums){
                 for (const song of album.songs){
+                    console.log(song);
                     temp_songs[i] = new Song();
                     temp_songs[i].title = song.title;
-                    temp_songs[i].artist = artist;
-                    temp_songs[i].album = album;
-                    
+                    temp_songs[i].artist = album.artist;
+                    temp_songs[i].album = album; 
                 }
             }
-        } 
         return temp_songs; 
     }
 
@@ -62,7 +61,7 @@ export class ArtistsComponent {
             .subscribe(artists => {
                 this.artists = artists;
                 this.albums = this.getAlbums(artists);
-                this.songs = this.getSongs(artists);
+                this.songs = this.getSongs(this.albums);
             });
     }
 }
