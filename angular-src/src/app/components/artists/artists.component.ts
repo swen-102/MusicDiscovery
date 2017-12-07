@@ -34,38 +34,36 @@ export class ArtistsComponent {
                 _id++;
                 i++;
             }
-        } 
-        console.log(temp_albums);
-        return temp_albums; 
+        }
+
+        return temp_albums;
     }
 
     getSongs(albums){
         let i=0;
         let temp_songs = [];
-       
+
             for(const album of albums){
                 for (const song of album.songs){
-                    console.log(song);
+
                     temp_songs[i] = new Song();
                     temp_songs[i].title = song.title;
                     temp_songs[i].artist = album.artist;
-                    temp_songs[i].album = album; 
+                    temp_songs[i].album = album;
                     i++;
                 }
             }
-        return temp_songs; 
+        return temp_songs;
     }
 
 
-    constructor(private artistService:ArtistService, private _router:Router){  
+    constructor(private artistService:ArtistService, private _router:Router){
         this.artistService.getArtists()
             .subscribe(artists => {
                 this.artists = artists;
                 this.albums = this.getAlbums(artists);
                 this.songs = this.getSongs(this.albums);
-                console.log(this.songs);
+              
             });
     }
 }
-
-
