@@ -15,9 +15,9 @@
         <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
           <a class="link" [routerLink]="['/profile']">Profile</a>
         </li>
-        <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <!-- <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
           <a class="link" [routerLink]="['/add-artist']">Add Artist</a>
-        </li>
+        </li> -->
         <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
           <a class="link" [routerLink]="['/login']">Login</a>
         </li>
