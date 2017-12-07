@@ -1,7 +1,7 @@
 /* Reset all default css*/
 *{
   color: #929292;
-  
+
   font-family: "helvetica neue";
 }
 
@@ -24,7 +24,7 @@
   border-radius: 5px;
   background-color: rgba(255,255,255,.7);
   transition: all 300ms;
-  
+
 }
 .textarea-input{
   font-size: 18px;
@@ -38,7 +38,7 @@
   resize: none;
   background-color: rgba(255,255,255,.7);
   transition: all 300ms;
-  
+
 }
 .form-input::placeholder, .textarea-input::placeholder{
   color: #929292;
@@ -47,7 +47,7 @@
 .form-input:focus, .textarea-input:focus{
   outline: 0;
   background-color: rgba(255,255,255,1);
- 
+
 }
 .registerButton {
   box-shadow: 1px 1px 10px #cccccc;
@@ -60,7 +60,7 @@
   background-color: #cccccc;
   transition: transform 300ms;
   cursor: pointer;
-} 
+}
 .registerButton:hover{
   transform: scale(1.2);
 }
@@ -74,7 +74,7 @@ body{
 }
 /* Header */
 .header{
- z-index: 1000;
+  z-index: 1000;
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -119,7 +119,7 @@ body{
   .link{
     text-decoration: none;
     transition: all 300ms;
-    
+
   }
   .link:hover{
     margin-bottom: 20px;
@@ -187,12 +187,12 @@ body{
   height: 200px;
   width: 100%;
   border-bottom: 1px solid #dddddd;
-  grid-template-areas: 
+  grid-template-areas:
  "p p p p a a a b b b c c c"
  "p p p p a a a b b b c c c"
  "p p p p a a a b b b c c c";
  align-items: center;
-  
+
 }
 .circle{
   position: relative;
@@ -239,7 +239,7 @@ body{
   /* artistListContainer */
   .itemListContainer{
     width: 100%;
-    
+
     /*margin: 0 10vw;*/
   }
   .itemList{
@@ -252,7 +252,7 @@ body{
     height: 100%;
   }
   .itemContainer{
-    
+
     justify-self: center;
     width: 150px;
     height: 150px;
@@ -305,7 +305,7 @@ body{
     border-radius: 10px;
   }
   .albumList{
-    
+
     grid-template-columns: 1fr 1fr;
   }
   .album{
@@ -387,8 +387,8 @@ body{
 
   /* Profile Page */
   .profile_page{
-   
-   
+
+
   }
 
   .header_profile{

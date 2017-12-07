@@ -18,16 +18,16 @@
       <a href="#ffs" class="circle">6</a>
       <h4>Favorite Songs</h4>
   </div>
-  
+
 </div>
 
 
 
 
 <div id="ffaa" class="section">
-  
+
   <h3 class="sectionHeader">Your Favorite <span class="green">Artists</span></h3>
-  
+
 
   <!-- Artist List -->
     <div class="itemListContainer">
@@ -46,9 +46,9 @@
 <div id="ffal" class="section lighter">
 
   <h3 class="sectionHeader">Your Favorite <span class="green">Albums</span></h3>
-  <div class="itemListContainer"> 
+  <div class="itemListContainer">
     <ul class="itemList albumList">
-      <li *ngFor="let album of albums" class="itemContainer album">
+      <li *ngFor="let album of albums | filter : searchText" class="itemContainer album">
         <img  class="albumImage" src="../../assets/Albums/{{album.artist._id}}-{{album._id}}.jpg">
         <h5 class="itemName albumName">{{album.title}}</h5>
       </li>
@@ -62,7 +62,7 @@
   <div class="itemListContainer">
     <ul class="itemList songList">
 
-      <li *ngFor="let song of songs" class="itemContainer song">
+      <li *ngFor="let song of songs | filter : searchText" class="itemContainer song">
         <img class="songImage" src="../../assets/Albums/{{song.artist._id}}-{{song.album._id}}.jpg">
         <h5 class="songName">{{ song.title }}</h5>
         <h5 class="artistName itemName">{{ song.artist.name }}</h5>
@@ -74,8 +74,5 @@
 <!-- Footer -->
 
 <div class="section footer">
-  
+
       </div>
-  
-
-
